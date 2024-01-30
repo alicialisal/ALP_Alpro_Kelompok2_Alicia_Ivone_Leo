@@ -56,9 +56,10 @@ def hapuskeranjang(noauto):
             nokeranjang = input("Masukkan no. keranjang yang ingin diedit = ")
 
             # Pastikan nomor keranjang yang ingin diedit ada dalam database
-            adamenu = utils.selectsql("kodemenu", "noauto", nokeranjang, "keranjangplg")[0]
+            adamenu = utils.selectsql("kodemenu", "noauto", nokeranjang, "keranjangplg")
 
             if adamenu:
+                adamenu = adamenu[0]
                 konfirhapus = input(f"Anda yakin ingin menghapus No. Keranjang {nokeranjang} - Menu {adamenu} (Y/N) = ")
                     # Hapus entri menu berdasarkan kode menu tertentu
                 if konfirhapus.lower() == 'y':
